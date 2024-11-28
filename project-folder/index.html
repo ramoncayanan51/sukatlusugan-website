@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>suKAtLUSUGAN</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--nav bar-->
+  <nav>
+    <a href="#">
+      <img src="images/sukatlusuganLogo.png" alt="Logo" class="nav-logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services"><strong>Services</strong></a></li>
+      <li><a href="#download"><strong>Get the App</strong></a></li>
+    </ul>
+  </nav>
+
+  <!--header-->
+  <header class="fade-in fade-in-visible">
+    <h1><strong>suKAtLUSUGAN</strong></h1>
+    <p>Your best buddy in healthcare.</p>
+    <a href="#download" class="download">Download the App</a>
+  </header>
+  
+  <!--services-->
+  <section id="services" class="fade-in">
+    <h1>Services</h1>
+    <div class="grid-container">
+      <img src="images/uidesign.png" alt="UI Design" class="p-image">
+      <div class="right-content">  
+        <div class="text-content">
+          <div class="users">
+            <div class="healthConscious">
+              <h2>Health Conscious</h2>
+              <p>Check your calorie status and what's good for you.</p>
+            </div>
+            <div class="newUser">
+              <h2>New User</h2>
+              <p>Help you to guide in a healthy and informative way.</p>
+            </div>
+          </div>
+        </div>
+  
+        <hr>
+  
+        <div class="features">
+          <div class="feature">
+            <h3>Intake and Exercise Monitoring</h3>
+            <p>Easily monitor your progress and stay on track toward your goals.</p>
+          </div>
+          <div class="feature">
+            <h3>Calorie Management</h3>
+            <p>Monitor your calorie intake and receive notifications to stay healthy.</p>
+          </div>
+          <div class="feature">
+            <h3>Real-Time Status</h3>
+            <p>Get a detailed view of your progress, history, and personalized plans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--download-->
+  <section id="download" class="fade-in">
+    <h2>Get the App</h2>
+    <p>Start your healthy lifestyle with suKAtLUSUGAN by downloading the app today!</p>
+    <div class="download-container">
+      <div class="download-buttons">
+        <div class="download-option">
+          <h3>suKAtLUSUGAN App</h3>
+          <p>Your best buddy in healthcare.</p>
+          <a href="app/FoodExerciseMonitor.apk" class="download-button" download>Download APK</a>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="images/KCAL.gif" alt="Burn calories" class="t-image">
+      </div>
+    </div>
+  </section>
+
+  <!--footer-->
+  <footer>
+    <a href="#terms" class="foot-link"><strong>Terms of Use</strong></a>
+    <a href="#privacy" class="foot-link"><strong>Privacy Policy</strong></a>
+    <p>© 2024 suKAtLUSUGAN. All Rights Reserved.</p>
+  </footer>
+
+  <!--fade animation-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faders = document.querySelectorAll(".fade-in");
+
+      const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+          } else {
+            entry.target.classList.remove("fade-in-visible");
+          }
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    });
+  </script>
+</body>
+</html>
